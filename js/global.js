@@ -7,7 +7,7 @@
 // console.dir(resultImage)
 //
 // document.getElementById('searchResultsSection').appendChild(result)
-fetch('http://thinksaydo.com/tiyproxy.php?url=' + encodeURIComponent('https://openapi.etsy.com/v2/listings/active?api_key=5oqwljqkdl34f1nhucdj35kc&keywords=' + encodeURIComponent('board games') + '&includes=Images,Shop'))
+fetch('https://thinksaydo.com/tiyproxy.php?url=' + encodeURIComponent('https://openapi.etsy.com/v2/listings/active?api_key=5oqwljqkdl34f1nhucdj35kc&keywords=' + encodeURIComponent('board games') + '&includes=Images,Shop'))
 .then(response => response.json())
 .then(response => createResultCards(response.results))
 
@@ -27,6 +27,9 @@ function createResultCards(items) {
     console.log(item)
     var col = document.createElement('div')
     col.classList.add('col-sm-3')
+
+    var link = document.createElement('a')
+    link.setAttribute('href', item.url)
 
     var card = document.createElement('div')
     card.classList.add('card', 'well') // removed col-sm-3
@@ -68,7 +71,8 @@ function createResultCards(items) {
 
     document.querySelector('#searchResultsSection').appendChild(col)
 
-    col.appendChild(card) // This is new
+    col.appendChild(link) // This is new
+    link.appendChild(card)
 
     card.appendChild(cardImageRow)
     cardImageRow.appendChild(cardImage)
@@ -100,7 +104,7 @@ function search() {
   // alert('You searched')
   document.querySelector('#searchResultsSection').innerHTML = '' // clears the prior results
   var searchTerm = document.querySelector('#searchText').value
-  fetch('http://thinksaydo.com/tiyproxy.php?url=' + encodeURIComponent('https://openapi.etsy.com/v2/listings/active?api_key=5oqwljqkdl34f1nhucdj35kc&keywords=' + encodeURIComponent(searchTerm) + '&includes=Images,Shop'))
+  fetch('https://thinksaydo.com/tiyproxy.php?url=' + encodeURIComponent('https://openapi.etsy.com/v2/listings/active?api_key=5oqwljqkdl34f1nhucdj35kc&keywords=' + encodeURIComponent(searchTerm) + '&includes=Images,Shop'))
   .then(response => response.json())
   .then(response => createResultCards(response.results))
   // console.log(searchTerm)
@@ -120,83 +124,3 @@ function searchEnter(event) {
   }
   // alert(searchTerm)
 }
-
-// Call your builder function, one at a time to make 12 search result cards, each with different data (image can be the same at this point if you want)
-// Don't forget you can use a for() loop, or make an array of objects even and use a items.forEach() loop.
-// for (var i = 0; i < 12; i++) {
-// var items = [
-//   {
-//     image: 'http://unsplash.it/200?image=',
-//     title: 'Vintage Board Game Art Wall Home Decor blargle blargle blargle blargle',
-//     seller: 'franz66',
-//     price: 15.00
-//   },
-//   {
-//     image: 'http://unsplash.it/200?image=',
-//     title: 'Vintage Board Game Art Wall Home Decor blargle blargle blargle blargle',
-//     seller: 'franz66',
-//     price: 15.00
-//   },
-//   {
-//     image: 'http://unsplash.it/200?image=',
-//     title: 'Vintage Board Game Art Wall Home Decor blargle blargle blargle blargle',
-//     seller: 'franz66',
-//     price: 15.00
-//   },
-//   {
-//     image: 'http://unsplash.it/200?image=',
-//     title: 'Vintage Board Game Art Wall Home Decor blargle blargle blargle blargle',
-//     seller: 'franz66',
-//     price: 15.00
-//   },
-//   {
-//     image: 'http://unsplash.it/200?image=',
-//     title: 'Vintage Board Game Art Wall Home Decor blargle blargle blargle blargle',
-//     seller: 'franz66',
-//     price: 15.00
-//   },
-//   {
-//     image: 'http://unsplash.it/200?image=',
-//     title: 'Vintage Board Game Art Wall Home Decor blargle blargle blargle blargle',
-//     seller: 'franz66',
-//     price: 15.00
-//   },
-//   {
-//     image: 'http://unsplash.it/200?image=',
-//     title: 'Vintage Board Game Art Wall Home Decor blargle blargle blargle blargle',
-//     seller: 'franz66',
-//     price: 15.00
-//   },
-//   {
-//     image: 'http://unsplash.it/200?image=',
-//     title: 'Vintage Board Game Art Wall Home Decor blargle blargle blargle blargle',
-//     seller: 'franz66',
-//     price: 15.00
-//   },
-//   {
-//     image: 'http://unsplash.it/200?image=',
-//     title: 'Vintage Board Game Art Wall Home Decor blargle blargle blargle blargle',
-//     seller: 'franz66',
-//     price: 15.00
-//   },
-//   {
-//     image: 'http://unsplash.it/200?image=',
-//     title: 'Vintage Board Game Art Wall Home Decor blargle blargle blargle blargle',
-//     seller: 'franz66',
-//     price: 15.00
-//   },
-//   {
-//     image: 'http://unsplash.it/200?image=',
-//     title: 'Vintage Board Game Art Wall Home Decor blargle blargle blargle blargle',
-//     seller: 'franz66',
-//     price: 15.00
-//   },
-//   {
-//     image: 'http://unsplash.it/200?image=',
-//     title: 'Vintage Board Game Art Wall Home Decor blargle blargle blargle blargle',
-//     seller: 'franz66',
-//     price: 15.00
-//   },
-// ]
-// add function makeCards(cardItems)  this will let me run the search and populate based on the value in the search box
-// add document.querySelector('resultssetcionid').innerHTML = ''
