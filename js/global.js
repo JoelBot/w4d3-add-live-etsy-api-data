@@ -7,7 +7,7 @@
 // console.dir(resultImage)
 //
 // document.getElementById('searchResultsSection').appendChild(result)
-fetch('http://thinksaydo.com/tiyproxy.php?url=' + encodeURIComponent('https://openapi.etsy.com/v2/listings/active?api_key=h9oq2yf3twf4ziejn10b717i&keywords=' + encodeURIComponent('board games') + '&includes=Images,Shop'))
+fetch('http://thinksaydo.com/tiyproxy.php?url=' + encodeURIComponent('https://openapi.etsy.com/v2/listings/active?api_key=5oqwljqkdl34f1nhucdj35kc&keywords=' + encodeURIComponent('board games') + '&includes=Images,Shop'))
 .then(response => response.json())
 .then(response => createResultCards(response.results))
 
@@ -100,7 +100,7 @@ function search() {
   // alert('You searched')
   document.querySelector('#searchResultsSection').innerHTML = '' // clears the prior results
   var searchTerm = document.querySelector('#searchText').value
-  fetch('http://thinksaydo.com/tiyproxy.php?url=' + encodeURIComponent('https://openapi.etsy.com/v2/listings/active?api_key=h9oq2yf3twf4ziejn10b717i&keywords=' + encodeURIComponent(searchTerm) + '&includes=Images,Shop'))
+  fetch('http://thinksaydo.com/tiyproxy.php?url=' + encodeURIComponent('https://openapi.etsy.com/v2/listings/active?api_key=5oqwljqkdl34f1nhucdj35kc&keywords=' + encodeURIComponent(searchTerm) + '&includes=Images,Shop'))
   .then(response => response.json())
   .then(response => createResultCards(response.results))
   // console.log(searchTerm)
