@@ -80,6 +80,36 @@ footer {
         height: 34px;
         display: inline-block;
     }
+    .colorBox {
+        width: 22px;
+        height: 22px;
+        box-shadow: 1px 1px 1px grey;
+        display: inline-block;
+    }
+    #red {
+        background-color: red;
+    }
+    #orange {
+        background-color: orange;
+    }
+    #yellow {
+        background-color: yellow;
+    }
+    #green {
+        background-color: green;
+    }
+    #blue {
+        background-color: blue;
+    }
+    #purple {
+        background-color: purple;
+    }
+    #black {
+        background-color: black;
+    }
+    #white {
+        background-color: white;
+    }
 }
 #searchResultsSection {
         // display: inline-block;

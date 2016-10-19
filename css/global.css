@@ -77,6 +77,45 @@ footer {
   display: inline-block;
 }
 
+#leftNav .colorBox {
+  width: 22px;
+  height: 22px;
+  box-shadow: 1px 1px 1px grey;
+  display: inline-block;
+}
+
+#leftNav #red {
+  background-color: red;
+}
+
+#leftNav #orange {
+  background-color: orange;
+}
+
+#leftNav #yellow {
+  background-color: yellow;
+}
+
+#leftNav #green {
+  background-color: green;
+}
+
+#leftNav #blue {
+  background-color: blue;
+}
+
+#leftNav #purple {
+  background-color: purple;
+}
+
+#leftNav #black {
+  background-color: black;
+}
+
+#leftNav #white {
+  background-color: white;
+}
+
 #searchResultsSection img {
   padding-left: 0;
   padding-right: 0;
