@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  max-height: 220px;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+body {
+  background-color: #F5F5F1;
+}
+
+.well {
+  background-color: white;
+}
+
+header {
+  padding-top: 20px;
+  background-color: white;
+}
+
+header .row {
+  margin-top: 7px;
+  margin-bottom: 15px;
+}
+
+header #navAndCart {
+  text-align: right;
+  height: 34px;
+  padding-top: 5px;
+}
+
+header a {
+  margin-left: 7px;
+  margin-right: 7px;
+}
+
+header #buttonBank {
+  background-color: transparent;
+}
+
+header #headerNav {
+  margin-bottom: 0px;
+}
+
+header .navbar {
+  margin-bottom: 0;
+  padding-left: 0px;
+  background-color: white;
+}
+
+body {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+body a {
+  color: #0192B5;
+}
+
+header {
+  height: auto;
+}
+
+#logo {
+  width: 100%;
+}
+
+#searchResultsSection img {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#searchResultsSection .card {
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  max-height: 280px;
+}
+
+#searchResultsSection span {
+  display: inline-block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
